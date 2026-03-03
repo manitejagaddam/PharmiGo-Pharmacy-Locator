@@ -32,7 +32,7 @@ const Home = () => {
   };
 
   return (
-    <div className="fade-in">
+    <div className="fade-in h-screen max-h-screen">
       {/* Hero Section */}
       <section style={{
         textAlign: 'center',

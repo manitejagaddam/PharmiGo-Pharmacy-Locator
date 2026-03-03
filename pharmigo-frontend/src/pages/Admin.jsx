@@ -92,8 +92,8 @@ const AdminDashboard = () => {
     );
 
     return (
-        <div className="fade-in">
-            <div className="flex justify-between items-center mb-8">
+        <div className="fade-in min-h-[1000px] max-h-screen ">
+            <div className="min-h-[100px] max-h-screen flex justify-between items-center mb-8">
                 <div>
                      <h2>Inventory Management</h2>
                      <p className="text-muted mt-1">Manage medicines, edit details, and add new products.</p>
@@ -108,7 +108,7 @@ const AdminDashboard = () => {
                     {error}
                 </div>
             ) : (
-                <div className="data-table-container">
+                <div className="min-h-[100px] max-h-screen data-table-container">
                     <table className="data-table">
                         <thead>
                             <tr>
@@ -164,15 +164,21 @@ const AdminDashboard = () => {
             {showModal && (
                 <div style={{
                     position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-                    backgroundColor: 'rgba(0,0,0,0.5)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    backgroundColor: 'rgba(0,0,0,0.55)',
+                    backdropFilter: 'blur(4px)',
                     zIndex: 1000,
-                    backdropFilter: 'blur(4px)'
+                    overflowY: 'auto',
                 }}>
-                    <div className="glass-panel slide-up" style={{
-                        maxWidth: '500px', width: '100%', padding: '2rem',
-                        background: 'var(--color-bg-white)'
+                    {/* Inner wrapper — 100vh ensures centering works on all screen sizes */}
+                    <div style={{
+                        minHeight: '100vh',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        padding: '2rem 1rem',
                     }}>
+                        <div className="glass-panel slide-up" style={{
+                            maxWidth: '500px', width: '100%', padding: '2rem',
+                            background: 'var(--color-bg-white)',
+                        }}>
                         <h3 className="mb-6 flex items-center gap-2">
                              {editingMed ? <Edit2 size={24} color="var(--color-primary)" /> : <Plus size={24} color="var(--color-primary)" />}
                              {editingMed ? 'Edit Medicine' : 'Add New Medicine'}
@@ -227,6 +233,7 @@ const AdminDashboard = () => {
                                 </button>
                             </div>
                         </form>
+                        </div>
                     </div>
                 </div>
             )}
