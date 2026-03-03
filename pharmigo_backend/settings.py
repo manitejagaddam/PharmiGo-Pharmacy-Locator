@@ -193,6 +193,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost",
     "http://127.0.0.1",
+    "http://localhost:5173",
+    "http://localhost:8000",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
