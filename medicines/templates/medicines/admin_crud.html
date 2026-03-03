@@ -1,0 +1,7 @@
+<h2>Medicines List</h2>
+
+<ul>
+    {% for medicine in medicines %}
+        <li>{{ medicine.name }} - {{ medicine.brand }}</li>
+    {% endfor %}
+</ul>

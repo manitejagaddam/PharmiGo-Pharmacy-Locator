@@ -1,0 +1,17 @@
+<h2>Search Medicines</h2>
+
+<form method="get">
+    <input type="text" name="search" placeholder="Search medicine...">
+    <button type="submit">Search</button>
+</form>
+
+<ul>
+    {% for medicine in medicines %}
+        <li>{{ medicine.name }} - {{ medicine.brand }}</li>
+    {% empty %}
+        <li>No medicines found.</li>
+    {% endfor %}
+</ul>
+<button onclick="window.location.href='{% url 'list-of-items-in-store' %}'">
+    show all items
+</button>
