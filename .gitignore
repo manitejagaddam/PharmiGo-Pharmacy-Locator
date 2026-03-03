@@ -5,3 +5,8 @@ Scripts/
 Include/
 pyvenv.cfg
 .env
+**/__pycache__/
+*.py[cod]
+*$py.class
+.env
+db.sqlite3
