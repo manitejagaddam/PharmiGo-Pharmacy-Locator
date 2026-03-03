@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import Login from './pages/LoginStatic';
+import Login from './pages/Login';
 import AdminDashboard from './pages/Admin';
 import { getAuthToken } from './services/api';
 

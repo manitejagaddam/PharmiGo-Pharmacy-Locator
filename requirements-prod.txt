@@ -1,0 +1,4 @@
+# Production dependencies — install this on your server/hosting platform
+# alongside requirements.txt when DATABASE_URL points to Postgres.
+-r requirements.txt
+psycopg[binary]==3.2.3
