@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom';
 import { HeartPulse, LogOut, ShieldCheck } from 'lucide-react';
-import { getAuthToken, setAuthToken } from '../services/api';
+import { getAuthToken, api } from '../services/api_dynamic';
 
 const Layout = () => {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ const Layout = () => {
   const isAdminRoute = location.pathname.includes('/admin');
 
   const handleLogout = () => {
-    setAuthToken(null);
+    api.logout();
     navigate('/');
   };
 
