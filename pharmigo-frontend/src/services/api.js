@@ -73,6 +73,15 @@ export const api = {
     return { ...mockMedicines[idx] };
   },
 
+  // Alias — same as updateMedicine for API compatibility with dynamic version
+  patchMedicine: async (id, partial, { signal } = {}) => {
+    await delay(200);
+    const idx = mockMedicines.findIndex(m => m.id === id);
+    if (idx === -1) throw new Error('Medicine not found');
+    mockMedicines[idx] = { ...mockMedicines[idx], ...partial };
+    return { ...mockMedicines[idx] };
+  },
+
   deleteMedicine: async (id) => {
     await delay(200);
     const idx = mockMedicines.findIndex(m => m.id === id);
